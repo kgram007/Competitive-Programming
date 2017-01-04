@@ -172,29 +172,6 @@ int getNextValidRow(const ValidityBoard& board_validity, int r, int c)
     return row;
 }
 
-//ofstream ofs("out.txt", ios::out);
-//ofstream ofs1("out1.txt", ios::out);
-//
-//void printSol(ofstream& f, int s[])
-//{
-//    for(int i=0; i<N; ++i)
-//        f << s[i] << "\t";
-//    f << "\n";
-//}
-//
-//void printSol(ofstream& f, vector<int>& s)
-//{
-//    for(int i=0; i<N; ++i)
-//        f << s[i] << "\t";
-//    f << "\n";
-//}
-//
-//void printSol_rev(ofstream& f, vector<int>& s)
-//{
-//    for(int i=0; i<N; ++i)
-//        f << N+1-s[i] << "\t";
-//    f << "\n";
-//}
 
 void genSolution_2(ValidityBoard board_validity, int& sol_count, SolutionVector& sol_vec, int r, int c, int s[])
 {
@@ -358,25 +335,6 @@ void genSolution_3(ValidityBoard board_validity, vector< vector<int> >& invalid_
 
         genSolution_3(board_validity, invalid_places, sol, total_count, invalid_count, r+1, c);
     }
-}
-
-int genSolution(ValidityBoard& board_validity, SolutionVector& sol_vec, vector< vector<int> >& invalid_places)
-{
-//    int s[N] = {0};
-//    int sol_count = 0;
-//    genSolution_2(board_validity, sol_count, sol_vec, 0, 0, s);
-//    return sol_count;
-
-//    int s[N] = {0};
-//    genSolution_1(board_validity, sol_vec, s, 0, 0);
-//    int sol_count = findSolution(sol_vec, invalid_places);
-//    return sol_count;
-
-//    int s[N] = {0};
-//    int total_count = 0, invalid_count = 0;
-//    genSolution_3(board_validity, invalid_places, s, total_count, invalid_count, 0, 0);
-//    int sol_count = total_count - invalid_count;
-//    return sol_count;
 }
 
 
