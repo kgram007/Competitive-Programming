@@ -1,4 +1,8 @@
-// Author: Ramsundar K G
+//********************************************************************************
+// Author           : Ramsundar K G - kgram007@gmail.com
+// Online judge     :
+// Problem ID/title :
+//********************************************************************************
 
 #define __cplusplus 201103L
 
@@ -7,6 +11,7 @@
 #include <sstream>
 #include <stdio.h>
 #include <math.h>
+#include <limits>
 #include <fstream>
 #include <vector>
 #include <list>
@@ -19,106 +24,36 @@
 #include <unordered_set>
 #include <iterator>
 #include <algorithm>
+#include <bitset>
 
-//*********** Debug  ************//
+//***************** Debug ******************//
+// - Defined with -D flag during compile time
+// - undef to disable definition
+//
 //#undef CHECK_RUN_TIME
 //#undef INPUT_FROM_FILE
-//*******************************//
+#undef OUTPUT_TO_FILE
+//******************************************//
 
 using namespace std;
 
 // Helper Class: Input Stream
-class InputStreamCin
+class InputStream
 {
 public:
-    InputStreamCin(bool sync_io=false)
-    {
-        std::ios::sync_with_stdio(sync_io);
-    }
-    virtual ~InputStreamCin() {};
+    template<typename T>
+    void get(T& x) { cin >> x; }
 
     template<typename T>
-    void get(T& x)
-    {
-        cin >> x;
-    }
+    void getArray(T& x, int size) { for(int i=0; i<size; ++i) cin >> x[i]; }
 
-    template<typename T>
-    void getArray(T& x, int size)
-    {
-        for(int i=0; i<size; ++i)
-            cin >> x[i];
-    }
+    int getLine(string& line) { getline(cin, line); return line.size(); }
 
-    int getLine(string& line)
-    {
-        getline(cin, line);
-        return line.size();
-    }
-
-    void getNonEmptyLine(string& line)
-    {
-        while( !getLine(line) );
-    }
-
-    void ignore()
-    {
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
+    void getNonEmptyLine(string& line) {  while( !getLine(line) ); }
 };
-
-class InputStreamFile
-{
-public:
-    InputStreamFile(string file)
-    {
-        fs_.open(file);
-    }
-    virtual ~InputStreamFile()
-    {
-        fs_.close();
-    }
-
-    template<typename T>
-    void get(T& x)
-    {
-        fs_ >> x;
-    }
-
-    template<typename T>
-    void getArray(T& x, int size)
-    {
-        for(int i=0; i<size; ++i)
-            fs_ >> x[i];
-    }
-
-    int getLine(string& line)
-    {
-        getline(fs_, line);
-        return line.size();
-    }
-
-    void getNonEmptyLine(string& line)
-    {
-        while( !getLine(line) );
-    }
-
-    void ignore()
-    {
-        fs_.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-private:
-    ifstream fs_;
-};
-
 
 // Input Stream variable
-#ifdef INPUT_FROM_FILE
-InputStreamFile in("test.txt");
-#else
-InputStreamCin in(false);
-#endif
+InputStream in;
 
 // Helper: Timer
 #ifdef CHECK_RUN_TIME
@@ -126,13 +61,20 @@ InputStreamCin in(false);
 Timer _run_timer;
 #endif
 
-void runTimerEntry()
+void programEntry()
 {
+#ifdef INPUT_FROM_FILE
+    freopen("test.txt", "r", stdin);
+#endif
+#ifdef OUTPUT_TO_FILE
+    freopen("out.txt", "w", stdout);
+#endif
 #ifdef CHECK_RUN_TIME
     _run_timer.start();
 #endif
 }
-void runTimerExit()
+
+void programExit()
 {
 #ifdef CHECK_RUN_TIME
     _run_timer.printTimeMilliSec("====================\nRun Time");
@@ -140,15 +82,16 @@ void runTimerExit()
 }
 //****************************************************************//
 
+
 // Main Function
 int main()
 {
-    runTimerEntry();
+    programEntry();
     //******************************************//
 
     // Code
 
     //******************************************//
-    runTimerExit();
+    programExit();
     return 0;
 }
