@@ -1,8 +1,8 @@
-//********************************************************************************
-// Author           : Ramsundar K G - kgram007@gmail.com
-// Online judge     :
-// Problem ID/title :
-//********************************************************************************
+/********************************************************************************\
+ * Author           : Ramsundar K G (kgram007@gmail.com)
+ * Online judge     :
+ * Problem ID/title :
+\********************************************************************************/
 
 #define __cplusplus 201103L
 
@@ -26,16 +26,26 @@
 #include <algorithm>
 #include <bitset>
 
-//***************** Debug ******************//
-// - Defined with -D flag during compile time
-// - undef to disable definition
-//
+/****************** Debug *******************\
+ * - Defined with -D flag during compile time
+ * - undef to disable definition
+\********************************************/
 //#undef CHECK_RUN_TIME
 //#undef INPUT_FROM_FILE
 #undef OUTPUT_TO_FILE
-//******************************************//
+/*******************************************/
 
 using namespace std;
+
+// Useful Typedefs
+typedef signed char        s8;
+typedef signed short       s16;
+typedef signed             s32;
+typedef signed long long   s64;
+typedef unsigned char      u8;
+typedef unsigned short     u16;
+typedef unsigned           u32;
+typedef unsigned long long u64;
 
 // Helper Class: Input Stream
 class InputStream
