@@ -51,15 +51,15 @@ typedef unsigned long long u64;
 class InputStream
 {
 public:
-    template<typename T>
-    void get(T& x) { cin >> x; }
+   template<typename T>
+   void get(T& x) { cin >> x; }
 
-    template<typename T>
-    void getArray(T& x, int size) { for(int i=0; i<size; ++i) cin >> x[i]; }
+   template<typename T>
+   void getArray(T& x, int size) { for(int i=0; i<size; ++i) cin >> x[i]; }
 
-    int getLine(string& line) { getline(cin, line); return line.size(); }
+   int getLine(string& line) { getline(cin, line); return line.size(); }
 
-    void getNonEmptyLine(string& line) {  while( !getLine(line) ); }
+   void getNonEmptyLine(string& line) {  while( !getLine(line) ); }
 };
 
 // Input Stream variable
@@ -74,20 +74,20 @@ Timer _run_timer;
 void programEntry()
 {
 #ifdef INPUT_FROM_FILE
-    freopen("test.txt", "r", stdin);
+   freopen("test.txt", "r", stdin);
 #endif
 #ifdef OUTPUT_TO_FILE
-    freopen("out.txt", "w", stdout);
+   freopen("out.txt", "w", stdout);
 #endif
 #ifdef CHECK_RUN_TIME
-    _run_timer.start();
+   _run_timer.start();
 #endif
 }
 
 void programExit()
 {
 #ifdef CHECK_RUN_TIME
-    _run_timer.printTimeMilliSec("====================\nRun Time");
+   _run_timer.printTimeMilliSec("====================\nRun Time");
 #endif
 }
 //****************************************************************//
@@ -96,12 +96,12 @@ void programExit()
 // Main Function
 int main()
 {
-    programEntry();
-    //******************************************//
+   programEntry();
+   //******************************************//
 
-    // Code
+   // Code
 
-    //******************************************//
-    programExit();
-    return 0;
+   //******************************************//
+   programExit();
+   return 0;
 }
